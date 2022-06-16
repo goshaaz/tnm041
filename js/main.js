@@ -1,12 +1,12 @@
 
 var focus_plus_context, points, pc;
 
-data = "./data/players20.json";
+data = "./data/players_20.csv";
 
 
 // ***** PART 1 : SCATTERPLOT *****
 
-d3.json(data, function (data)
+d3.csv(data, function (data)
 {
 	points = new Points();                               
 
@@ -18,7 +18,7 @@ d3.json(data, function (data)
 // ***** PART 2 : CLUSTERING *****
 
 queue()
-	.defer(d3.json, 'data/players20.json')
+	.defer(d3.csv, 'data/players_20.csv')
 	.await(draw);
 
 function draw(error, data1)
